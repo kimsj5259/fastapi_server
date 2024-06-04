@@ -1,0 +1,34 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+uvicorn = {extras = ["standard"], version = "*"}
+alembic = "*"
+redis = "*"
+sqlalchemy = "*"
+sqlmodel = "*"
+fastapi-async-sqlalchemy = "*"
+fastapi-pagination = "*"
+fastapi-cache2 = {extras = ["redis"], version = "*"}
+loguru = "*"
+fastapi-limiter = "*"
+python-jose = {extras = ["cryptography"], version = "*"}
+passlib = {extras = ["bcrypt"], version = "*"}
+pipenv = "*"
+shell = "*"
+email-validator = "*"
+pydantic = "*"
+asyncpg = "*"
+greenlet = "*"
+python-multipart = "*"
+aiohttp = "*"
+boto3 = "*"
+
+[dev-packages]
+black = "*"
+
+[requires]
+python_version = "3.10"

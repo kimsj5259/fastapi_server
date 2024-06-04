@@ -1,0 +1,39 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - dev
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set current time
+        id: set-time
+        run: echo "current_time=$(date +"%Y%m%d%H%M%S")" >> $GITHUB_OUTPUT
+
+      - name: archive jin
+        run: tar cvfz ./fastapi_${{ steps.set-time.outputs.current_time }}.tar.gz *
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-2
+
+      - name: upload to S3
+        run: aws s3 cp --region ap-northeast-2 ./fastapi_${{ steps.set-time.outputs.current_time }}.tar.gz s3://jin-deploy-dev/backend/
+
+      - name: deploy with AWS codeDeploy
+        run: aws deploy create-deployment
+          --application-name fastapi-dev
+          --deployment-config-name CodeDeployDefault.AllAtOnce
+          --deployment-group-name dev-deploy-group
+          --s3-location bucket=jin-deploy-dev,bundleType=tgz,key=backend/fastapi_${{ steps.set-time.outputs.current_time }}.tar.gz

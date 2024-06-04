@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  server:
+    container_name: server
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8000:80
+    env_file: .env
+    volumes:
+      - ./server:/app
+    networks:
+      - base-bridge
+
+  redis_server:
+    image: redis:alpine
+    container_name: redis_server
+    restart: always
+    expose:
+      - 6379
+
+    networks:
+      - base-bridge
+
+networks:
+  base-bridge:
+    driver: bridge
