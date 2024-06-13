@@ -4,15 +4,12 @@ import operator
 from typing import Any, Annotated, Optional, List
 
 from fastapi import APIRouter, Depends, File, UploadFile, HTTPException, status, Body, Request
-from fastapi_pagination import Params
 
 from ..models.user_model import User
-from ..schemas.role_schema import IRoleEnum
 from ...core.base_service import S3Events, S3_BASE_URL
 from ...core.common_deps import get_current_user
 from ...core.exceptions.common_exception import IdNotFoundException
 from ...core.schemas.response_schema import (
-    IGetResponsePaginated,
     IGetResponseBase,
     IPostResponseBase,
     IPutResponseBase,

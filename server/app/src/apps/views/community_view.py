@@ -12,7 +12,7 @@ from ...core.schemas.response_schema import (
 )
 
 from ..models.user_model import User
-from ..models.community_model import SubjectSuggestion, UserSuggestion
+from ..models.community_model import SubjectSuggestion
 from ..schemas.community_schema import ISubjectSuggestionRead, IUserSuggestionRead, IMatchedUserResponse
 from ..repositories.community_repository import CommunityRepository, get_community_repository
 

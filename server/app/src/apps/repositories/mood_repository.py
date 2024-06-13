@@ -1,5 +1,5 @@
 from loguru import logger
-from sqlmodel import select, func
+from sqlmodel import select
 from sqlmodel.ext.asyncio.session import AsyncSession
 from ...core.base_repository import BaseRepository
 from ..models.mood_model import MoodMicroStatus

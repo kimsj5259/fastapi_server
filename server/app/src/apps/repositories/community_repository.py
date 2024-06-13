@@ -3,7 +3,7 @@ from sqlmodel.ext.asyncio.session import AsyncSession
 
 from ...core.base_repository import BaseRepository
 
-from ..models.community_model import UserSuggestion, SubjectSuggestion
+from ..models.community_model import UserSuggestion
 from ..schemas.community_schema import ISubjectSuggestionCreate, ISubjectSuggestionUpdate
 
 

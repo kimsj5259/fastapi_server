@@ -2,7 +2,6 @@ import logging
 from collections.abc import AsyncGenerator
 
 from jose import jwt, ExpiredSignatureError
-from loguru import logger
 
 from pydantic import ValidationError
 from fastapi import Depends, HTTPException, status

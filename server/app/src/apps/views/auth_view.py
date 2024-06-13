@@ -10,6 +10,8 @@ from fastapi import APIRouter, Body, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from fastapi.responses import RedirectResponse
 
+from ..repositories.profile_repository import ProfileRepository, get_profile_repository
+
 from ...core.utils.auth.security import (
     create_token,
     get_password_hash,

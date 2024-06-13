@@ -1,7 +1,5 @@
 from enum import Enum
 
-from pydantic import BaseModel
-
 from ...core.decorators.partial import optional
 
 from ..models.user_model import UserBase

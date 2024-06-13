@@ -1,10 +1,7 @@
-from typing import Any
-from uuid import UUID
 from loguru import logger
 from sqlmodel import select
 from sqlmodel.ext.asyncio.session import AsyncSession
 
-from ...core.utils.auth.security import verify_password
 from ...core.base_repository import BaseRepository
 
 from ..schemas.profile_schema import IProfileCreate, IProfileUpdate, IModifyProfile

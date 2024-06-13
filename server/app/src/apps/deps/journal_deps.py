@@ -1,6 +1,6 @@
-import itertools, logging
+import logging
 
-from fastapi import APIRouter, Body, Depends, HTTPException, status
+from fastapi import HTTPException, status
 
 from ...core.base_service import S3Events
 

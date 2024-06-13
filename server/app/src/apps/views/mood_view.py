@@ -1,21 +1,11 @@
-from typing import Annotated
 from fastapi import (
     APIRouter,
-    Body,
     Depends,
-    File,
-    Query,
-    HTTPException,
-    Response,
-    UploadFile,
-    status,
 )
 from fastapi_pagination import Params
 
-from ...core.exceptions.common_exception import IdNotFoundException
 from ...core.schemas.response_schema import (
     IGetResponsePaginated,
-    create_response,
     create_list_response,
 )
 

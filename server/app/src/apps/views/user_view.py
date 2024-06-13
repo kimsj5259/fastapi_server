@@ -1,4 +1,3 @@
-from typing import Annotated
 from uuid import UUID
 
 from fastapi import APIRouter, Depends, status
@@ -17,7 +16,6 @@ from ...core.schemas.response_schema import (
 from ..schemas.role_schema import IRoleEnum
 from ..schemas.user_schema import IUserCreate, IUserRead, IUserUpdate
 from ..models.user_model import User
-from ..models.role_model import Role
 from ..repositories.user_repository import UserRepository, get_user_repository
 from ..deps import user_deps as user_deps
 

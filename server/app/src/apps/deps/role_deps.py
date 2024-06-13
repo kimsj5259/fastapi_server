@@ -1,5 +1,4 @@
 from typing_extensions import Annotated
-from uuid import UUID
 
 from fastapi import Depends, Query, Path
 

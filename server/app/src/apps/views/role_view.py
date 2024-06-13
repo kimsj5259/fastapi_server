@@ -1,4 +1,3 @@
-from typing import Annotated
 from fastapi import APIRouter, Depends, status
 from fastapi_pagination import Params
 
