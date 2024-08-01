@@ -22,7 +22,9 @@ from ..deps import role_deps as role_deps
 
 router = APIRouter()
 
-
+'''
+Adding a function that works same as UserGuard in nestjs for distribute API
+'''
 @router.get("")
 async def get_roles(
     role_repository: RoleRepository = Depends(get_role_repository),
