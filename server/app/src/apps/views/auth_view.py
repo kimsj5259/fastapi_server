@@ -385,6 +385,3 @@ async def login_access_token(
         )
 
     return {"access_token": access_token, "token_type": "bearer"}
-
-
-#### 잘생긴 진형님
