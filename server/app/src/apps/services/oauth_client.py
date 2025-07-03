@@ -217,3 +217,6 @@ apple_client = OAuthClient(
     resource_uri="",
     verify_uri="",
 )
+
+
+#### 예쁘신 윤희님
